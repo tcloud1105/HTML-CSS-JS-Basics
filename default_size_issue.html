@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Default height and width issue</title>
+	  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+	  <style>
+	  .red{
+	    background:red;
+	  }
+	  .font_size{
+	    font-size:100px;
+	  }
+	  </style>
+  </head>
+  <body>
+  
+	<p class="red">123456</p>
+	
+	<span class="red">123456</span>
+	
+	<!-- default height of block and inline tags are decided by the contents they wrap-->
+	<p class="red font_size">123456</p>
+	
+	<span class="red font_size">123456</span>
+	
+	<!--default width of an inline tag is the same as its contents-->
+	<p class="red">123456 MORE CONTENTS MORE CONTENTS</p>
+	
+	<span class="red">123456 MORE CONTENTS MORE CONTENTS</span>
+  </body>
+</html>
