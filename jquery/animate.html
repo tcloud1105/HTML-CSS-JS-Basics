@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Page Title</title>
+	  <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+	  <meta name='viewport' content='width=device-width;initial-scale=1.0' />
+	  <style>
+	    *{font-size:44px;font-family:helvetica}
+		#div{
+		  width:300px;height:300px;background:orange;color:white;
+		}
+		#div1{
+		  width:200px;height:200px;background:orange;color:white;
+		  position:absolute;
+		}
+	  </style>
+  </head>
+  <body>
+    <p id="text">Click the button below <br>and I will disappear and reappear...</p>
+	<button id="btn">Click me!</button>
+	
+	<div id='div'>
+	  <p>width:300px</p>
+	  <p>height:300px</p>
+	</div>
+	<button id="animate">animate</button>
+	
+	<div id="div1">
+	  Click me and I will move
+	</div>
+	
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+	  $('#btn').click(function(){
+	    if($('#text').is(':visible')){
+		  //$('#text').hide('slow')// ,values could be fast, slow ,normal and duration time 10000 etc...
+		  //$('#text').fadeIn('slow')//change the opacity of selected element
+		  $('#text').slideUp('slow') // change the height of the selected element
+		}else{
+		  //$('#text').show('slow')
+		  //$('#text').fadeOut('slow')
+		  $('#text').slideDown('slow')
+		}
+	  }) 
+	  // animate and delay methods
+	   $('#animate').click(function(){
+	      $('#div').animate({
+		    width:'600px',
+			height:'600px'
+		  },'slow')
+		  .delay(1000)
+		  .animate({
+		    width:'300px',
+			height:'300px'
+		  },'slow')
+	   })
+	   
+	   // animate methods experience
+	   $('#div1').click(function(){
+	     $(this).animate({
+		   left:'+=200px'
+		 },'slow')
+	   })
+	</script>
+  </body>
+ </html>

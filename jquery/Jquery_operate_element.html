@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Page Title</title>
+	  <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+	  <meta name='viewport' content='width=device-width;initial-scale=1.0' />
+	  
+  </head>
+  <body>
+    <ul class="parent">
+	  <li name="first">List Item 1</li>
+	  <li name="second">List Item 2</li>
+	  <li name="third">List Item 3</li>
+	  <li id="fourth">List Item 4</li>
+	  <li>List Item 5</li>
+	  <li>List Item 6</li>
+	  <li>List Item 7</li>
+	  <li>List Item 8</li>
+	  <li>List Item 9</li>
+	  <li>List Item 10</li>
+	  <li>List Item 11</li>
+	</ul>
+	<p> I am the first p tags</p>
+	<p> I am the second p tags</p>
+	<p> I am the third p tags</p>
+	
+	
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+	// Retrieving text and html element
+	   $('p').text() // let you text element
+	   $('p').text('Set a new element')
+	   $('p').append('Set a new element')
+	   $('p').prepend('Set a new element')
+	   $('ul').html() // retrieve HTML contents
+	   //$('ul').html('<p>New HTML Tags</p>')
+	   $('p').append('<p>New HTML Tags</p>')
+	   $('p').prepend('<p>New HTML Tags</p>')
+	   
+	 // Manipulating Attribute
+	 $('img').attr('alt') // Return attribue alt value
+	 $('img').attr('alt','Set by Jquery') // set the new value of attribue alt
+	 $('img').attr({
+	   src:'image2.jpg',
+	   alt:'Set by JQuery',
+	   title:'New Image'
+	 })
+	</script>

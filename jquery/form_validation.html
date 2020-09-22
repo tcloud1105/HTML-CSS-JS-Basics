@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Page Title</title>
+	  <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+	  <meta name='viewport' content='width=device-width;initial-scale=1.0' />
+	  <style>
+	    *{font-size:44px;font-family:helvetica}
+		.highlight{background:yellow}
+		.parent{position:relative}
+		#title{position:absolute;left:10px;}
+	  </style>
+  </head>
+  <body>
+    <form id="form">
+	  <div class="parent">
+	      <input id="name" name="user_name" type="text" value=""/>
+		  <span id="title">e-mail address</span>
+	      <span id="message"></span>
+	    </div>
+	</form>
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+	  $('#title').click(function(){
+	    $(this).hide()
+	  })
+	  
+	  $('#name').focus(function(){
+	    $('#title').hide();
+		$('#name').css('border','2px solid blue');
+	  })
+	  .blur(function(){
+	    // user take cursor out of the box
+		// check data
+		if($('#name').val()==''){
+		  // user did not submit any data, restore input box status
+		  $('#name').css('border','1px solid black');
+		  $('#title').show();
+		}else{
+		  // check user submitted data
+		  // regular expression
+		  // /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/
+		  var result = $('#name').val().match(/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/)
+		  if(result){
+		  // email address check passed
+		    $('#message').text('Correct Email Address');
+		  }else{
+		    $('#message').text('Invalid Email Address');
+			$('#name').css('border':'3px solid red');
+		  }
+		}
+	  })
+	</script>
+  </body>
+ </html>
