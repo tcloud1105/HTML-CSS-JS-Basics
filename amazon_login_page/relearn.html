@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Re-learn</title>
+	  <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+	  <style>
+	  *{margin:0;padding:0;
+	  font-size:99px;color:white;
+	  }
+	  a{
+	    background:red;
+		line-height:300px;
+		position:absolute
+		/*
+		if you apply line-height on a tag, the position of a tag will be pushed downward
+		but the range of background color remains the same but the p tags the line-height will contribute to the background size
+		then if you apply absolute position to a tag, the line-height will contribute the background size
+		*/
+	  }
+	  
+	  .first{
+	    height:200px;width:600px;
+		background:orange;
+		position:absolute;
+		z-index:1;
+	  }
+	  /* absolute element will cover static element defined behind it but not relative element.
+	  z-index does not work on static elements
+	  */
+	  .second{
+	    height:200px;width:600px;
+		background:orange;
+		position:relative
+	  }
+	  .third{
+	     height:200px;width:600px;
+		 background:crimson;
+		 position:static;
+	  }
+	  </style>
+  </head>
+  <body>
+    <a>line height</a>
+	<div class="first"></div>
+	<div class="second"></div>
+	<div class="third"></div>
+  </body>
+</html>
