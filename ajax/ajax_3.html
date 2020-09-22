@@ -1,0 +1,56 @@
+<!DOCTYPE html><!--Version Declaration-->
+<html>
+  <head>
+      <title>Ajax Project</title>
+	  <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+  </head>
+  <body>
+      <ul id="ul"></ul>
+	  
+    <script type="text/javascript">
+	   var ajax = new XMLHttpRequest();
+	   
+	   function request(){
+	     var url="./interface.php";
+		 ajax.onreadystatechange = response 
+		 ajax.open('POST',url,true) 
+		 ajax.setRequestHeader('Content-Type','application/x-www-form-urlencoded')
+		 ajax.send('range=all');
+	   }
+	   
+	   function response(){
+	    var ul = document.getElementById('ul')
+		 if(ajax.readyState === 4){
+		   if(ajax.status===200){
+		      var result = JSON.parse(ajax.responseText)
+			  if(result[0]){
+			    // true, rows retrieved 
+				var row_total = result[1].length;
+			
+			    ul.innerHTML = "";
+			    for(var i=0;i<row_total;i++){
+			      li_content = "Brand is: "+result[1][i].brand+" and Model is: "+ result[1][i].model;
+			      make_list_item(li_content,ul);
+			    }
+			  }else{
+			      ul.innerHTML = "";
+			      make_list_item(result[1],ul);
+			  }
+		   }
+		 }
+	   }
+	   
+	   function make_list_item(list_item_content,parent_element){
+	     var li = document.createElement('li');
+		 li.append(list_item_content);
+		 parent_element.appendChild(li)
+	   }
+	   
+	   // Calling the request function
+	   setInterval(function(){
+	       request()
+	   },1000);
+	  
+	</script>
+  </body>
+</html>

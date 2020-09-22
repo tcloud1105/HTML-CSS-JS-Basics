@@ -1,0 +1,38 @@
+<!DOCTYPE html><!--Version Declaration-->
+<html>
+  <head>
+      <title>Ajax Project</title>
+	  <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+	  <script type='text/javascript' src='jquery.js'/></script>
+  </head>
+  <body>
+     
+	 <button id='btn' onclick='request()'>Send Ajax Request</button> 
+	 <ul id="ul"></ul>
+    <script type="text/javascript">
+	  function request(){
+	    $.ajax({
+		   url:'./interface.php',
+		   method:'POST',// get is the default method
+		   data:{
+		     msg:'data sent by jquery ajax...'
+		   }
+		})
+		.always(function(data){
+		  //console.log('ALWAYS '+data)
+		  $('#ul').empty();
+		})
+		.done(function(data){
+		   //console.log('DONE '+data)
+		   $('#ul').append('li'+JSON.parse(data).msg)
+		})
+		.fail(function(data){
+		  //console.log('FAIL '+data.statusText)
+		  $('#ul').append('li'+data.statusText)
+		})
+		// some shortcuts $.post(), $.get(), 4.getJSON()
+	  }
+	  
+	</script>
+  </body>
+</html>

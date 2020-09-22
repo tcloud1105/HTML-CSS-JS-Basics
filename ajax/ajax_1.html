@@ -1,0 +1,35 @@
+<!DOCTYPE html><!--Version Declaration-->
+<html>
+  <head>
+      <title>Ajax Project</title>
+	  <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+  </head>
+  <body>
+  <button id="btn" onclick="request()">Send Ajax Request</button>
+    <script type="text/javascript">
+	   var ajax = new XMLHttpRequest();
+	   console.log(ajax)
+	   
+	   function request(){
+	     var url="./interface.php";
+		 ajax.onreadystatechange = response // NO Parenthesis!!!
+		 ajax.open('POST',url,true) // method,url,true(controls whether async is on or not)
+		 ajax.setRequestHeader('Content-Type','application/x-www-form-urlencoded')// necessary if you are sending data using POST
+		 ajax.send('name=me&msg=my message&time=2020');
+	   }
+	   
+	   function response(){
+	     //console.log("Response func. has been triggered...")
+		 //console.log(ajax.readyState)
+		 if(ajax.readyState === 4){
+		   if(ajax.status===200){
+		   //console.log(ajax.responseText)
+		   //console.log(JSON)
+		   console.log(JSON.parse(ajax.responseText).author)
+		   }
+		 }
+	   }
+	  
+	</script>
+  </body>
+</html>
