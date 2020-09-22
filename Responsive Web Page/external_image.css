@@ -1,0 +1,67 @@
+*{padding:0;margin:0;list-style:none;color:white;
+font-size:55px;text-align:center;}
+.container{
+	width:1080px;background:yellow;margin:0 auto;
+	padding:5px;
+}
+.header{
+	background:crimson;margin-bottom:10px;
+}
+.navbar{
+	background:teal;margin-bottom:10px;
+	width:1070px;background:yellow;margin:0 auto;
+	padding:5px;
+}
+.gallery{
+	text-align:center;
+}
+.main{
+	width:800px;height:400px;float:left
+	background:green;margin-bottom:10px;
+}
+.sidebar{
+	width:250px;height:400px;float:right;
+	background:orange;margin-bottom:10px;
+}
+.footer{
+	background:violet;
+}
+
+
+
+.navbar li a{
+	display:inline-block;padding:5px 10px;
+}
+.logo{
+	float:left;font-weight:bold;padding:5px 10px;
+}
+.navbar li{
+	float:left;
+}
+.left-bar{float:left;background:orange}
+.right-bar{float:right;background:crimson}
+.switch{display:none;}
+
+@media(max-width:1199px) and (min-width:768px){
+	.container{width:100%}
+	.main{width:75%}
+	.sidebar{width:21%}
+	.navbar{width:100%;}
+	.gallery img{width:100%}
+}
+
+@media(max-width:767px){
+	.container{width:100%}
+	.main{float:none;width:100%}
+	.sidebar{float:none;width:100%}
+	.navbar{width:100%;position:relative;}
+	.logo, .left-bar, .right-bar, .navbar li{float:none;}
+	.switch{
+		display:block;
+		position:absolute;
+		top:5px;
+		right:15px;
+	}
+	.sidebar{width:100%}
+	.gallery img{width:100%}
+}

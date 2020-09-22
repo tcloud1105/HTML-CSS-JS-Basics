@@ -1,0 +1,32 @@
+*{margin:0px;padding:0px;font-size:22px;list-style:none;text-decoration:none}
+.navbar{
+	width:1070px;background:yellow;margin:0 auto;
+	padding:5px;
+}
+.navbar li a{
+	display:inline-block;padding:5px 10px;
+}
+.logo{
+	float:left;font-weight:bold;padding:5px 10px;
+}
+.navbar li{
+	float:left;
+}
+.left-bar{float:left;background:orange}
+.right-bar{float:right;background:crimson}
+.switch{display:none;}
+
+@media(max-width:1199px) and (min-width:768px){
+	.navbar{width:100%;}
+}
+
+@media(max-width:767px){
+	.navbar{width:100%;position:relative;}
+	.logo, .left-bar, .right-bar, .navbar li{float:none;}
+	.switch{
+		display:block;
+		position:absolute;
+		top:5px;
+		right:15px;
+	}
+}
