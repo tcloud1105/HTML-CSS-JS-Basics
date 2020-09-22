@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Page Title</title>
+	  <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+	  <style>
+	  *{margin:0;padding:0;}
+	  .venti{height:500px;}
+	  .grande{height:400px;}
+	  .tall{height:300px;}
+	  .short{height:200px;}
+	  .old-content{background:url("./wall.jpg");}
+	  .margin-top{margin-top:200px;}
+	  /* applying margin-top to the tallest inline-block will drag its siblings downward or upward 
+	  if you apply to all sibling to margin-top, the image height and margin-top value of the biggest sibling will win 
+	  margin-bottom apply to the biggest image will push downward the other sibling and the biggest will remain to its original position
+	  */
+	  </style>
+  </head>
+  <body>
+  <div class="old-content"></div>
+    <img class="venti margin-top" src="image.jpg" alt="image"/>
+	<img class="grande" src="image.jpg" alt="image"/>
+	<img class="tall" src="image.jpg" alt="image"/>
+	<img class="short" src="image.jpg" alt="image"/>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Page Title</title>
+	  <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+	  <style>
+	  *{margin:0;padding:0;}
+	  body{
+	    font-size:55px;text-align:center;line-height:200px;
+		color:white;
+	  }
+	  .sibling1{background:red; width:800px; height:200px;}
+	  .sibling2{background:green; width:800px; height:200px;}
+	  .margin-top{margin-top:99px;}
+	  .margin-bottom{margin-bottom:100px;}
+	  .placeholder{height:1px;}
+	  /*
+	    margin-top and margin-bottom overlap eac other;
+		to solve this issue, add a block tag with a defined height between the siblings
+	  */
+	  </style>
+  </head>
+  <body>
+    <div class="sibling1 margin-bottom">margin-bottom:99px</div>
+	<div class="placeholder"></div>
+	<div class="sibling2 margin-top">margin-top:100px</div>
+  </body>
+</html>
