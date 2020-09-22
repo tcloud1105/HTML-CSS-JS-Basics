@@ -1,0 +1,27 @@
+<!DOCTYPE html><!--Version Declaration-->
+<html>
+  <head>
+      <title>Background Image</title>
+	  <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+	  <style>
+	  *{margin:0;padding:0;word-break:break-all;}
+	  .main{width:600px;color:red;font-size:999px;}
+	    body{background:url('image.jpg');
+		background-repeat:no-repeat;/* repeat, repeat-x, repeat-y *?
+		background-attachment:fixed;/* to cover the entire webpage; the values are: fixed, scroll */
+		}
+		div{
+		width:300px; height:220px; border: 1px dashed black;
+		background-repeat:no-repeat;
+		background:url(icon.jpg);
+		background-position:100px 100px;/* controls which parts of the image to display */
+		/*background:url(icon.jpg) no-repeat 100px 100px; */
+		}
+	  </style>
+  </head>
+  <body>
+    <div>
+	  long web page...
+	</div>
+  </body>
+</html>
